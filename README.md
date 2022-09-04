@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @likhithssyadav18
+- 👋 Hi, I’m Likhith
 - 👀 I’m interested in Python and R.
 - 🌱 I’m currently learning Data Visualization.
 - 📫 sailikhith.edu2022@gmail.com
