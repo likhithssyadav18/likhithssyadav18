@@ -1,0 +1,32 @@
+.myContainer {
+    margin:auto;
+    width:1720px ;
+}
+
+svg {
+    width:1700px;
+    height:1600px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+#my_dataviz{
+    width:auto; 
+    height:auto;
+    padding:10px;
+}
+
+input[type="time"]::-webkit-clear-button {
+    display: none;
+  }
+  
+/* label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+} */
+
+input,
+label {
+    margin: .4rem 0;
+}
