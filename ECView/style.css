@@ -20,11 +20,6 @@ svg {
 input[type="time"]::-webkit-clear-button {
     display: none;
   }
-  
-/* label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-} */
 
 input,
 label {
