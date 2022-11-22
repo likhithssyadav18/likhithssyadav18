@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 													//Event_Latitude: +d.Event_Latitude,
 													//Event_Longitude: +d.Event_Longitude,
 													Tweet_Datestamp: convDate(d['Tweet Timestamp']),
+
 													Tweet_Timestamp: convTime(d['Tweet Timestamp']),
 													Event_Datestamp: convDate(d['Event Timestamp']),
 													Event_Timestamp: convTime(d['Event Timestamp']),
@@ -133,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function(values) {
             console.log('loaded twitter_data.csv and twitter_data.json');
             twitter_csv=values[0];
+			//console.log(twitter_csv);
             getDateRange(twitter_csv);
 		});
 		
@@ -164,16 +166,17 @@ function getDateRange(twitter_csv)
 	}
 	else
 	{
-		document.getElementById("st_demo").innerHTML="Start date: "+start_date_str + " not in range";
-		//console.log("Start date not in Range");
-		if(tweet_date[0]<event_date[0])
-		{
-			start=tweet_date[0];
-		}
-		else
-		{
-			start=event_date[0];
-		}
+
+			document.getElementById("st_demo").innerHTML="Start date: "+start_date_str + " not in range";
+			//console.log("Start date not in Range");
+			if(tweet_date[0]<event_date[0])
+			{
+				start=tweet_date[0];
+			}
+			else
+			{
+				start=event_date[0];
+			}
 	}
 
 	if(end_date<=event_date[1] || end_date<=tweet_date[1] && delta>0)
@@ -218,19 +221,21 @@ function getDateRange(twitter_csv)
 function drawEventCalendarView(twitter_csv,start,stop,begin,end)
 {
 	svg.selectAll('*').remove();
-	let data_csv=twitter_csv;
 	let svg_ec = document.querySelector('#svg1');
 	const width = parseInt(getComputedStyle(svg_ec).width, 10);
 	const height = parseInt(getComputedStyle(svg_ec).height, 10);
 	const innWidth = width - margin.left - margin.right;
 	const innHeight = height - margin.top - margin.bottom;
-	//let start,stop,begin,end;
-	//[start,stop,begin,end]=getDateRange(data_csv);
-	console.log(start,stop,begin,end);
+	//console.log(start,stop,begin,end);
 	let diff=stop.getTime()-start.getTime();
 	let steps=Math.ceil(diff/(1000*3600*24));
 	//console.log(steps)
-
+	if(steps==0)
+	{
+		document.getElementById("st_demo").innerHTML="Start Date and End Date can't be same";
+	}
+	else
+	{
 	let tip = d3.select("body")
 			.append("div")
 			.style("position", "absolute")
@@ -251,7 +256,7 @@ function drawEventCalendarView(twitter_csv,start,stop,begin,end)
 			.style("pointer-events","none");
 
 	let x_scl = d3.scaleTime().range([margin.left, innWidth-margin.right]).nice();
-		x_scl.domain([begin,end]).ticks(1440);
+		x_scl.domain([begin,end]).ticks(86400);				//Timestamp in HH:MM:SS converted to SS(24*60*60)
 
 		/*let x_axisT = d3.axisTop(x_scl)
 						.ticks(1440)
@@ -281,7 +286,7 @@ function drawEventCalendarView(twitter_csv,start,stop,begin,end)
 		y_scl.domain([stop,start]);
 		
 	let y_axisL = d3.axisLeft(y_scl)
-					.ticks(25)
+					.ticks(steps)
 					.tickSizeInner(5) 
       				.tickSizeOuter(0)
 					.tickFormat(d3.timeFormat("%Y-%m-%d"));
@@ -409,7 +414,16 @@ function drawEventCalendarView(twitter_csv,start,stop,begin,end)
 				})
 				.on("mousemove",function(d,i) {
 					tip.style("top", (event.pageY)+"px").style("left",(event.pageX)+"px");
-				}).transition()
+				})
+				.on('click',function(d,i) {
+					//console.log(d,i);
+					let temp=[{"Event_Name":0,"Tweet_Datestamp":0,"Event_Datestamp":0}]
+					temp[0]["Event_Name"]=i.Event_Name;
+					temp[0]["Tweet_Datestamp"]=i.Tweet_Datestamp;
+					temp[0]["Event_Datestamp"]=i.Event_Datestamp;
+					console.log(temp)			
+				})
+				.transition()
 				.duration(1500)
 				.delay(600);
 				
@@ -507,6 +521,6 @@ function drawEventCalendarView(twitter_csv,start,stop,begin,end)
 			}
 		}
 	}
-				
+}			
 			
 }
