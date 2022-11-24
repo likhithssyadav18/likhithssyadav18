@@ -11,9 +11,23 @@ svg {
     border-radius: 3px;
 }
 
+#tipSVG {
+    width:600px;
+    height:500px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
 #my_dataviz{
     width:auto; 
     height:auto;
+    padding:10px;
+}
+
+#tipDiv{
+    width: auto; 
+    height: auto;
     padding:10px;
 }
 
