@@ -77,7 +77,6 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 
 | 🔍 **Hint:** When you mouse over a point or the area, you want to select the currently hovered element. Inside your `mouseover`/`mousemove`/`mouseout`/`click`/`dblclick` functions, `this` will return a reference to the point element or area element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.|
 
-![images/hover_point.PNG](images/hover_point.PNG) ![images/hover_point.PNG](images/hover_point.PNG)
 
 ## Step 5: Displaying a linked bar chart
 
@@ -90,3 +89,5 @@ When the user clicks on the area enclosed by the spider chart, draw a bar chart 
 In my example below, the area in the spider chart is blue, so clicking on it will load a bar chart in the tooltip where the bars have same color(blue).
 Clicking another area will change the color of the bars. It's also okay to give a bit of padding between the bars, like what I show in the screenshots (though this is optional). 
 However, you should give the bars a 2-pixel thick border.
+
+![images/onclick.png](images/onclick.png)
