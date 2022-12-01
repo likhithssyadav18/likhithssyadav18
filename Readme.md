@@ -14,9 +14,7 @@ By the end of this assignment you should be able to:
 - Usage of mouse-event interactions.
 
 
-The GIF below shows an example of what your finished interface will look like.
-
-![images/interface.gif](images/interface.gif)
+The screenshots below shows an example of what your finished interface will look like.
 
 ![images/interface-1.gif](images/interface-1.gif)
 ![images/interface-2.PNG](images/interface-2.PNG)
