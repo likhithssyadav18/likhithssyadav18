@@ -66,7 +66,7 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 - Choose a categorical d3 color scale for this chart by picking a color scale from [https://github.com/d3/d3-scale-chromatic](https://github.com/d3/d3-scale-chromatic). For my screenshots, I'm using the `d3.schemeAccent` scale, but you can choose any categorical scale you like. Represent each category of pokemon with a color from the scale of your choice.
 - Create circular bands to indicate the scale along the sequence of axes as shown in the above figure.
 
-| 🔍 **Hint:** Here's two examples of making spider charts: [http://bl.ocks.org/nbremer/21746a9668ffdf6d8242](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242), [http://bl.ocks.org/nbremer/6506614](http://bl.ocks.org/nbremer/6506614). Note that the both the chart implementation use an older version of D3, but the syntax is similar.
+| 🔍 **Hint:** Here's two examples of making spider charts: [http://bl.ocks.org/nbremer/21746a9668ffdf6d8242](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242), [http://bl.ocks.org/nbremer/6506614](http://bl.ocks.org/nbremer/6506614). Note that the both the chart implementation use an older version of D3, but the syntax is similar. |
 
 ## Step 4: Adding a tooltip for Spider chart
 - When the user mouses over the points plotted in the axes or under the area of the spider chart, then create a `tooltip to display the value of the the trait of the corresponding axes` as shown in the figure. Upon hovering the area, emphasize the area by increasing its opacity from 0.4 to 0.7. While upon hovering the data point, emphasize the point by increasing stroke width from 1 to 5.
@@ -75,7 +75,7 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 
 ![images/hover.PNG](images/hover.png)
 
-| 🔍 **Hint:** When you mouse over a point or the area, you want to select the currently hovered element. Inside your `mouseover`/`mousemove`/`mouseout`/`click`/`dblclick` functions, `this` will return a reference to the point element or area element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.
+| 🔍 **Hint:** When you mouse over a point or the area, you want to select the currently hovered element. Inside your `mouseover`/`mousemove`/`mouseout`/`click`/`dblclick` functions, `this` will return a reference to the point element or area element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.|
 
 ![images/hover_point.PNG](images/hover_point.PNG) ![images/hover_point.PNG](images/hover_point.PNG)
 
