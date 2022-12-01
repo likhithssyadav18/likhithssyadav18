@@ -94,3 +94,5 @@ Clicking another area will change the color of the bars. It's also okay to give 
 However, you should give the bars a 2-pixel thick border.
 
 ![images/onclick.png](images/onclick.png)
+
+Once you are finished with Step 5 and you have your chart looking similar to the screenshot above, you are done! Be sure to commit and push your completed code by the deadline.
