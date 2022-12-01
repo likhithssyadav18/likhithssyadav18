@@ -79,3 +79,14 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 
 ![images/hover_point.PNG](images/hover_point.PNG) ![images/hover_point.PNG](images/hover_point.PNG)
 
+## Step 5: Displaying a linked bar chart
+
+When the user clicks on the area enclosed by the spider chart, draw a bar chart in the tooltip. The bar chart should be centered in the tooltip (with a reasonable margin, similar to the screenshot below), and show the count of the selected pokemons in every region.
+
+- Compute the number of pokemons of required type and category across all the regions and store it in a data structure.
+- Consider the region in the X-axis using `d3.scaleBand()` and the frequency of pokemons in the Y-axis using `d3.scaleLinear()`.
+- The bars in the bar chart should be the same color as the area that was clicked on in the spider chart.
+ 
+In my example below, the area in the spider chart is blue, so clicking on it will load a bar chart in the tooltip where the bars have same color(blue).
+Clicking another area will change the color of the bars. It's also okay to give a bit of padding between the bars, like what I show in the screenshots (though this is optional). 
+However, you should give the bars a 2-pixel thick border.
