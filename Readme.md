@@ -68,7 +68,7 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 - Create circular bands to indicate the scale along the sequence of axes as shown in the above figure.
 - When the user mouses over the points plotted in the axes or under the area of the spider chart, then create a tooltip to display the value of the the trait of the corresponding axes as shown in the figure.
 
-![images/hover_point.PNG](images/hover.png)
+![images/hover.PNG](images/hover.png)
 
 - perform two actions: (1) First, emphasize the currently hovered arc by increasing its border thickness from 1 to 4 pixels. (2) Second, centered in the inside of the donut, show the count of the selected character type, as shown in the below gif. Make sure that the font size you choose is legible, and that it fully fits inside the inner ring (you can assume we won't test a count higher than 999). When the user mouses off of the arc, make the border go back to a thickness of 1, and clear the inside text (i.e., make it blank inside the donut chart).
 
