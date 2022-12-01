@@ -72,5 +72,5 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 
 | 🔍 **Hint:** When you mouse over an arc, you want to select the currently hovered arc. Inside your `mouseover`/`mousemove`/`mouseout` functions, `this` will return a reference to the arc element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.
 
-![images/hover_point.PNG](images/hover_point.PNG)
+![images/hover_point.PNG](images/hover_point.PNG) ![images/hover_point.PNG](images/hover_point.PNG)
 
