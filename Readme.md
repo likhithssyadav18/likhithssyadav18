@@ -16,8 +16,8 @@ By the end of this assignment you should be able to:
 
 The screenshots below shows an example of what your finished interface will look like.
 
-![images/interface-1.gif](images/interface-1.gif)
-![images/interface-2.PNG](images/interface-2.PNG)
+![images/interface.png](images/interface.png)
+
 ## Overview
 
 The starter code for this assignment shows four panels on the `index.html` page. 
