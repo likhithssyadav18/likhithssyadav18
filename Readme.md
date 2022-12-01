@@ -45,7 +45,7 @@ Attributes like HP, Attack, Defense, Special Attack, Special Defense and Speed a
 
 When you first run the page, you should see the empty interface. Add your name and email to the top. It's up to you if you want to write your JavaScript code in a separate JS file, or in the main `index.html` file.
 
-### Step 1: Creating select list
+## Step 1: Creating select list
 Create a `select` dropdown element in `index.html` inside the `div` element with a class `col-3`, and add all the 18 types from the dataset as options for the dropdown.
 Then, add code so that, when the type in the `select` is changed, the drawSpiderChart() function in `main.js` will be called.
 
