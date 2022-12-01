@@ -59,20 +59,23 @@ Since D3 doesn't have any information about the attribute types of the new files
 For the six attributes, change the data type from string to numeric. D3's data loading functions (e.g. d3.csv) have a provision for that, which is documented [here](https://github.com/d3/d3-fetch/blob/master/README.md). You can also do the converting after you have loaded the data.
 
 ## Step 3: Displaying a Spider chart
-
 When the user clicks on the `Apply` button, you should display a spider chart with six axes that show the distrubution of statistics of pokemons of a particular type selected from the `select` element (i.e., the median values of HP, Attack, Defense, Speed, Special Attack and Special Defense of all the pokemons under selected type for ordinary, mythical, mega/primal evolved and legendary categories from the dataset).
  
 - You'll want to first read the stored dataset and filter the dataset according to the type of the pokemon selected from the list and store it in a set of one or more data structures. Every time the apply button is pressed, you'll need to recreate these variables with values of the given dataset using the selected filter.
 - Your spider charts should be centered inside the respective SVG's of respective category division elements. Make sure the spider chart does not go outside of the `svg`'s bounds.
 - Choose a categorical d3 color scale for this chart by picking a color scale from [https://github.com/d3/d3-scale-chromatic](https://github.com/d3/d3-scale-chromatic). For my screenshots, I'm using the `d3.schemeAccent` scale, but you can choose any categorical scale you like. Represent each category of pokemon with a color from the scale of your choice.
 - Create circular bands to indicate the scale along the sequence of axes as shown in the above figure.
+
+| 🔍 **Hint:** Here's two examples of making spider charts: [http://bl.ocks.org/nbremer/21746a9668ffdf6d8242](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242), [http://bl.ocks.org/nbremer/6506614](http://bl.ocks.org/nbremer/6506614). Note that the both the chart implementation use an older version of D3, but the syntax is similar.
+
+## Step 4: Adding a tooltip for Spider chart
 - When the user mouses over the points plotted in the axes or under the area of the spider chart, then create a `tooltip to display the value of the the trait of the corresponding axes` as shown in the figure. Upon hovering the area, emphasize the area by increasing its opacity from 0.4 to 0.7. While upon hovering the data point, emphasize the point by increasing stroke width from 1 to 5.
 
 ![images/hover.PNG](images/hover.png)
 
 - When the user clicks on the area of the spider chart, then create a `tooltip that displays the count of the selected pokemons in every region in a bar chart` as illustrated in the next step.
 
-| 🔍 **Hint:** Here's two examples of making spider charts: [http://bl.ocks.org/nbremer/21746a9668ffdf6d8242](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242), [http://bl.ocks.org/nbremer/6506614](http://bl.ocks.org/nbremer/6506614). Note that the both the chart implementation use an older version of D3, but the syntax is similar.
+
 
 | 🔍 **Hint:** When you mouse over a point or the area, you want to select the currently hovered element. Inside your `mouseover`/`mousemove`/`mouseout`/`click`/`dblclick` functions, `this` will return a reference to the point element or area element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.
 
