@@ -50,3 +50,9 @@ Create a `select` dropdown element in `index.html` inside the `div` element with
 Then, add code so that, when the type in the `select` is changed, the drawSpiderChart() function in `main.js` will be called.
 
 > 🔍 **Hint:** There's multiple ways to do this! For example, you could add an `onchange` event, or create an event listener using Javascript. 
+
+## Step 2: Performing Data Wrangling
+In `main.js`, the `Pokemon_Database.csv` file are loaded. Once the data is loaded,  store it in one or more global variables so that when the type changes we don't need to load the dataset again.
+
+Since D3 doesn't have any information about the attribute types of the new files, it interprets every data value as a string. To use the quantatitive columns as such, you'll need to do some data wrangling to convert each row of the data to the correct numeric format. 
+For the six attributes, change the data type from string to numeric. D3's data loading functions (e.g. d3.csv) have a provision for that, which is documented [here](https://github.com/d3/d3-fetch/blob/master/README.md). You can also do the converting after you have loaded the data.
