@@ -52,7 +52,7 @@ Then, add code so that, when the type in the `select` is changed, the drawSpider
 > 🔍 **Hint:** There's multiple ways to do this! For example, you could add an `onchange` event, or create an event listener using Javascript. 
 
 ## Step 2: Performing Data Wrangling
-In `main.js`, the `Pokemon_Database.csv` file are loaded. Once the data is loaded,  store it in one or more global variables so that when the type changes we don't need to load the dataset again.
+In `main.js`, the `Pokemon_Database.csv` file are loaded. Once the data is loaded,  store it in one or more global variables so that when the type changes we don't need to load the dataset again. Filter the dataset according to the type of the pokemon selected from the list.
 
 Since D3 doesn't have any information about the attribute types of the new files, it interprets every data value as a string. To use the quantatitive columns as such, you'll need to do some data wrangling to convert each row of the data to the correct numeric format. 
 
