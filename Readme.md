@@ -57,3 +57,20 @@ In `main.js`, the `Pokemon_Database.csv` file are loaded. Once the data is loade
 Since D3 doesn't have any information about the attribute types of the new files, it interprets every data value as a string. To use the quantatitive columns as such, you'll need to do some data wrangling to convert each row of the data to the correct numeric format. 
 
 For the six attributes, change the data type from string to numeric. D3's data loading functions (e.g. d3.csv) have a provision for that, which is documented [here](https://github.com/d3/d3-fetch/blob/master/README.md). You can also do the converting after you have loaded the data.
+
+## Step 3: Displaying a Spider chart
+
+When the user clicks on the `Apply` button, you should display a spider chart with six axes that show the distrubution of statistics of pokemons of a particular type selected from the `select` element (i.e., the median values of HP, Attack, Defense, Speed, Special Attack and Special Defense of all the pokemons under selected type for ordinary, mythical, mega/primal evolved and legendary categories from the dataset).
+ 
+- You'll want to first read the stored dataset and filter the dataset according to the type of the pokemon selected from the list and store it in a set of one or more data structures. Every time the apply button is pressed, you'll need to recreate these variables with values of the given dataset using the selected filter.
+- Your spider charts should be centered inside the respective SVG's of respective category division elements. Make sure the spider chart does not go outside of the `svg`'s bounds.
+- Choose a categorical d3 color scale for this chart by picking a color scale from [https://github.com/d3/d3-scale-chromatic](https://github.com/d3/d3-scale-chromatic). For my screenshots, I'm using the `d3.schemeAccent` scale, but you can choose any categorical scale you like. Represent each category of pokemon with a color from the scale of your choice.
+- Create circular bands to indicate the scale along the sequence of axes as shown in the above figure.
+- When the user mouses over the points plotted in the axes in the spider chart, then create a tooltip to display the value of the pointperform two actions: (1) First, emphasize the currently hovered arc by increasing its border thickness from 1 to 4 pixels. (2) Second, centered in the inside of the donut, show the count of the selected character type, as shown in the below gif. Make sure that the font size you choose is legible, and that it fully fits inside the inner ring (you can assume we won't test a count higher than 999). When the user mouses off of the arc, make the border go back to a thickness of 1, and clear the inside text (i.e., make it blank inside the donut chart).
+
+| 🔍 **Hint:** Here's two examples of making donut charts: [https://observablehq.com/@d3/donut-chart](https://observablehq.com/@d3/donut-chart), [https://embed.plnkr.co/plunk/Zfv7x6](https://embed.plnkr.co/plunk/Zfv7x6). Note that the second chart uses an older version of D3, but the syntax is similar.
+
+| 🔍 **Hint:** When you mouse over an arc, you want to select the currently hovered arc. Inside your `mouseover`/`mousemove`/`mouseout` functions, `this` will return a reference to the arc element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.
+
+![images/hover_point.PNG](images/hover_point.PNG)
+
