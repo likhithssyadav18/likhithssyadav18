@@ -30,7 +30,7 @@ Clicking a area under the spider chart will show a tooltip where it displays the
 
 ## Data Description
 
-This assignment uses a csv file in the main branch: Pokemon_Database.csv. 
+This assignment uses a csv file in the main branch: `Pokemon_Database.csv`. 
 This file consists of 905 different pokemons which are present across 8 generations(from Kanto to Galar and Hisui), with the game statistics of each pokemon being recorded.
 Attributes like HP, Attack, Defense, Special Attack, Special Defense and Speed are present in this dataset along with class labels like Generation, Type1, Type2, Category, Mega_Evolution_Flag and Region_Forme.
 
