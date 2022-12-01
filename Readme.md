@@ -71,11 +71,9 @@ When the user clicks on the `Apply` button, you should display a spider chart wi
 ## Step 4: Adding a tooltip for Spider chart
 - When the user mouses over the points plotted in the axes or under the area of the spider chart, then create a `tooltip to display the value of the the trait of the corresponding axes` as shown in the figure. Upon hovering the area, emphasize the area by increasing its opacity from 0.4 to 0.7. While upon hovering the data point, emphasize the point by increasing stroke width from 1 to 5.
 
-![images/hover.PNG](images/hover.png)
-
 - When the user clicks on the area of the spider chart, then create a `tooltip that displays the count of the selected pokemons in every region in a bar chart` as illustrated in the next step.
 
-
+![images/hover.PNG](images/hover.png)
 
 | 🔍 **Hint:** When you mouse over a point or the area, you want to select the currently hovered element. Inside your `mouseover`/`mousemove`/`mouseout`/`click`/`dblclick` functions, `this` will return a reference to the point element or area element in the DOM. You might also consider calling these functions like so: `.on('mouseover', function(d, i) { ...})`. Use the Dev Tools to see what the `d` and `i` objects are, and what properties they contain, as a way to figure out how to reference the data item that is currently part of the event.
 
