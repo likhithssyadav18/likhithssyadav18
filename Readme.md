@@ -16,7 +16,7 @@ By the end of this assignment you should be able to:
 
 The GIF below shows an example of what your finished interface will look like.
 
-![images/interface.gif](images/interface.mp4)
+![images/interface.mp4](images/interface.mp4)
 
 ## Overview
 
